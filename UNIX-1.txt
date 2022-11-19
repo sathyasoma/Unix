@@ -1,0 +1,619 @@
+
+what is unix:
+------------
+unix is an Operating System,which is created in 1960.
+
+your father learned UNIX
+
+you learning UNIX/linux
+
+your kids will UNIX
+
+60 yrs before OS
+
+with several enhancements and improvements to base  version,several flavours introducecd by 
+organization/companies.(RedHat Linux, UBUNTU, CENTOS).
+
+Charectristics of UNIX:
+------------------------
+   1.it is free ware
+   2.it is open source
+      the source code how the commands are implemented  we can see.
+	    we can customize  sourc code  based on our requirements
+	
+	durgasoft---> durgasoft flavours
+	
+
+It IS FOSS===> Freeware  and open source software.
+
+  3. UNIX can be used by multiple users simulteniously, Hence it is multi user operating system.
+  
+  4, In UNIX , multiple tasks can be  executed simulteniously,  Hence it multi tasking operatig
+system.	
+ 
+   5. windows is GUI based
+      
+	    UNIX is CUI based (base version)
+		there are multiple UNIX favours  which supports  both GUI, AND CUI.hence it is userfrindly.
+
+
+  GUI and CUI which is more convient?
+  
+     CUI is more better than GUI
+	     GUI we can small kind operations
+		  (we can create one folder only one time,we cant creat multiple ate one time)
+	
+	     CUI we can create at single time multiple operations.
+		 
+           command: cui:  =>   mkdir dir{1..100}
+         
+        file.txt1, file.txt2....file.txt100
+		
+		To create a file: touch  (command)
+		
+		touch dir{1..100}/file{1..100}.txt1     ==>10000 files will created
+		
+      GUI--GRAPHICAL USER INTERFACE
+	  CUI--CHARECTER USER INTERFACE
+	  CLI--COMMAND LINE INTERFACE
+	
+  6. it is vry secured
+       file permissions ==> permissions are very stronger
+	   we can set permissions at user leve, gruop level, and other levls also.
+	   
+
+Flavours of Linux:
+------------------
+   linux os which is developed based on UNIX only
+
+it is customized os, any one can customize unix3
+
+Ubuntu
+RedHat
+centOs
+fEDORA
+Slackware
+Open Solaries
+Kali
+Mint
+Suse Linux Enterprise Server
+Open Suse
+
+distrowatch.com    100 of flavours are available.
+
+
+
+  car driving==> bmw
+                 Audi    5 min or 5km difficult
+
+
+Components of UNIX:
+===================
+
+2 Components:
+    1. Shell
+	2. Kernel
+	
+1-=> user types a command on the terminal
+        touch sathya.txt1
+
+Shell:
+======
+   itis outer layer of OS
+   shell Recievs the command
+   Shell will check whether this command is valid or not?
+   Shell will check whether this command is properly used or not?
+   
+   
+* If everything is proper, then converts/interpreted this command into kernel understandable form
+and handover to kernel.
+
+kERNEL:
+======
+  It is core component of OS
+Kernel simply executes that command and perform required activity .
+  memory allocation,processor allocation every thing takes care by kernel 
+Shell acts as interface between user and kernel.
+Kernel acts as interface between shell and hardware.
+
+
+very basic commands to enter into linux world:
+=============================================
+online terminal:
+===========
+   http://www.masswerk.at/jsuix
+   
+  * it is free terminal and written in java script
+   *we can access this terminal by using any browser.
+   
+* 
+  1.pwd==>print working directory
+  2.ls==>list out all files and directories
+  3.mkdir==>to create new directory
+  4.cd==>change directory
+  5.touch==>to create an empty file
+  6. rmdir-->to remove directory
+  7.rm=> to remove a file
+  8.cal==> current month calender
+  9.date==>to display current date and time.
+  10. help--> to display list of commands
+  11. hello-->to display brief systsem information
+  12. clear-->to clear the screen
+  13. exit-->to close current session. 
+  
+  
+  
+
+
+
+Directory Navigation commands:
+==============================
+cd..  ==> go to parent directory
+
+In every directory there are 2 hidden files by default.
+
+.  -> representing cureent working directory
+
+..  -> parent directoty.
+
+to change to user home directory:
+================================
+~   -> always poining to users home directory
+
+cd ~
+
+if we use cd command without any argment:
+
+    cd    => simply moves users home directory
+	
+	
+cd ~  =  cd    are same 
+
+
+if we want move privious working directory: 
+ cd -
+ 
+
+cd . ==> to move to current working dir(useless)
+
+cd .. ==> to move to parent working dir
+
+cd ~  => to move to users home dir
+
+cd     => to moveto users home
+
+cd -  => to move to previous wrking dir
+
+
+ls command:
+----------
+
+list out files and directories present in the given directory.
+if we are not providing any directory the it will find in cwd.
+
+ls--> list out all files and directories in cwd
+
+ls /etc
+ls dir1 
+
+if multiple filess are then in which order these will be dispalyed?
+   in alphabeticl order.
+ 
+we required reverse order?
+   ls -r
+   
+==>
+man pages  = manual pages
+
+man <command_name>
+
+man ls
+
+* ls -l  =>mean long listing
+
+
+- rw- r-- r-- 1 durga  newgrp 16 apr
+
+
+The first charecter represent type of the file.
+
+- means normal file.
+
+d means directory.
+
+
+rw-  r--  r--
+
+* first three represent user permissions(owner)
+
+*next 3 prmissions sre (group permissions)
+
+* last 3 permissions are (others permissions)
+
+
+rwx order is important.
+
+user permisions+group permisions+others permisions===> order imp.
+
+ ex:
+ ====
+ 
+ project : durgasodt college automation system
+ 
+ module-1:
+  A,B,C,D are working
+  
+ module-2:
+   E,f are working
+   
+ module -3:
+   G,H are working
+   
+ module-4:
+   X,Y are working
+   
+
+ Developer A create demo.txt file.
+ 
+ for demo.txt:
+ ------------
+ 
+ user/owner -->A ( the person who created file)
+
+ Group --> B,C,D (the persons are who are working in the same module )
+ 
+ Others --> E,F,G,H,X,Y(THE PERSONS WHO ARE WORKING OTHER MODULES)
+ 
+ 
+ 1 ==> represent the number of links 
+
+ durga--> user/owner
+ 
+ newgrp ==> group name
+ 
+ 16--> size of the file in (bytes)
+ 
+
+
+
+*touch .abcd.txt (hidden file starrts with dot(.))
+
+  if you want see hidden files.
+      ls -a   (it can show all the files)
+	  
+* i dont want show file in alphabetical order
+    i want based on creation time top old at bottem
+
+  ls -l -t  ==> new files top, old filed files bottom
+
+      * i want old files first, recent files bottom
+  
+             ls -l -t -r
+	 
+* by default ls command will dispaly all directory fiels and directories
+  but not sub directories.
+  
+    ls -R
+
+colors:
+=======
+
+blue--> directories
+
+whilte color--> files
+
+green color:--> execute files 
+
+(based on flovers colors will be changed)
+
+   * to disable the color   :  ls -f
+   * to specified files:     ls -F
+   
+Q: which command will make long listing of all the files in our system including
+hidden files, sorted by modification time(oldest first)
+ 
+ Ans: ls -l -a -t -r
+
+ (we can use any order)
+                        ls -latr
+		                ls -lrta
+						ls -lrat
+
+
+** if listing is very huge then we can see only particular number?
+
+top 10 lines
+bottom 10 lines
+
+ls -l /etc  | head -4  (only we get top 4 lines)
+
+ls -l /etc | tail -7 (last 7 lines we get)
+
+	
+**page by page: more and less commands
+
+    ls -l /etc | more 
+	     tab key to go to next page.
+
+    ls -l /etc | less
+	   
+	   
+more vs less:
+------------
+which is powerfull? : 
+
+   *less is more powerful than more
+       by using less we cn view page by page in both directions means
+	      next page or to previous page
+		    d  --> next page
+			b  --> previous page
+			
+
+   
+    *more always display only in forward directions 
+	   only next page but not previous page
+	   
+date:
+------
+
+To display date and time
+
+* to display only date but not time: mm/dd/yy
+
+ cmd :  date +%D
+ 
+ * to disply only time
+ 
+    cmd:  date +%T
+
+->date  +%d  --> only day value
+->date  +%m  --> only month value
+->date  +%y  -->only value in yy format
+->date  +%Y  --> only year value in yyyy format
+
+ * our own format
+
+     date +%d/%m/%Y 
+ 
+ * hours,minut,seconds
+  
+    date +%H    --> 24 hrs scale
+	date +%I    -->12 hrs scale 
+	date +%M    -->minuts
+	date +%S    -->seconds
+	
+Q.create an empty file where file name contains currnet system date?
+
+  	touch --> to create a file 
+	
+	 date +%d_%m_%y 
+	 
+ execute command and substitute its result where ever it is required?
+ 
+   
+Ans:  touch sathya.txt_$(date +%d_%m_%y).log
+	
+	      touch sathya.txt_$(date +%d_%m_%y_%H_%M_%S).log
+	
+	
+cal command:
+============
+
+cal 8 2020
+
+
+working with directories:
+========================
+
+mkdir dir1 
+
+mkdir dir2 dir3 dir4 
+
+
+mkdir dir1/dir2/dir3 
+        it will create only one directory : dir3 
+		dir1 sholud be availble already 
+		in that dir2 sholud be available already 
+
+
+mkdir -p dir1/dir2/dir3 
+           path wiilbe created within it 
+	
+Q** dir6 dir7 dir8 dir9 dir10 
+      in every directory creat files a.txt b.txt c.txt d.txt 
+	  
+
+  touch dir{6..10}/{a..d}.txt 
+
+
+**
+     heroins -->dir 
+	   sunny
+	        jan 2020--dec 2020,jan 2021- dec 2021..22
+	   katrina
+           jan 2020--dec 2020,jan 2021- dec 2021..22
+	   karena 
+	        jan 2020--dec 2020,jan 2021- dec 2021..22
+	   anushka
+           jan 2020--dec 2020,jan 2021- dec 2021..22
+
+
+jan 2020 
+   schedule_1.txt
+   schedule_1.txt
+   schedule_1.txt
+   
+   ....
+   schedule_31.txt
+
+
+ touch heroins/{sunny,katrina,karena,anushka}/{jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec}_202{0,1,2}/schedule_{1..31}.txt
+ 
+ 
+**
+    mkdir x y x/x1 x/x2 x/x1/x11 x/x1/x12 y/y1 y/y2 y/y1/y11 y/y1/y12
+	
+	mkdir -p x/x1/x1{1,2} x/x2  y/y1/y1{1,2} y/y2 
+
+
+To REMOVE DIRECTORIES:
+---------------------
+
+rmdir 
+   it will work for only empty directories 
+     if the directory is not empty then we will get error
+	   -r or -R options are not applicatble for rmdir 
+
+rm
+  To delte voth files and directories
+    even directory non-empty,no problem rm can work 
+      if we want to use rm command for directories we shuld use -r option 
+
+          ex:  rm -r dir1   or rm -R dir1 
+
+
+working with files:
+-----------------
+1. by using touch 
+
+2. by using cat command 
+
+3.by using editors (gedit,vi,nano editors...)
+
+
+1.By using touch command:
+-========================
+  we can create only empty files 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		  
+
+
+
+	
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	   
+ 
+
+
+ 
+
+
+	
+
+  
+
+
+ 
+
+
+
+   
+		
+
+
+
+
+
+
+
+
+
+********************************************************************************
+****************************************************************************
+
+UNIX by ::::::::::::::SubbaraJU:::::::::::::::::
+
+---
+what is software:
+  collection of specialized programs called software.
+  
+  softwares are classified into two types
+   1.application software
+   2.System software
+   
+   
+   application software:
+     which is going to meet all end user requirements like word processors,browsers and db.
+	 
+   System software:
+      1.OPERATING SYSTEMS
+	  2.SYSTEM UTILITIES
+	  
+  SYSTEM UTILITIES:
+     The main functions which are doing in os, ex: disc cleanup,
+	 
+
+OPERATING SYSTEMS:
+-----------------
+
+os is a software which operates all hardware components,
+  it is an interface bwn human and computer.
+  
+  
+  

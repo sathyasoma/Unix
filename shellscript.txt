@@ -1,0 +1,1195 @@
+shell programming/shell scripting:
+-----------------------------
+what is shell?
+--------------
+1.shell is responsibe to read command provided by user.
+2.shell will check whether the command is valid or not
+3. shell will check whether the command is properly used or not
+4.if everry thing is proper then shell interpreted(converts) that command into kernel
+  understandable form and handover that converted command to kernel.
+  
+  
+* kernel is responsible to execute that command with the help of hardware.
+
+shell acts as interface between user and kernel
+
+shell acts as interface between user and kernel 
+
+shell+kernel is nothing but operating system.
+
+
+
+Types of shells:
+=================
+1.Bourne shell
+2.Bash shell
+3.korn shell
+4.Cshell
+5.Tshell
+6.Zshell
+etc..
+
+
+1 Bourn shell:
+=============
+it is developed by stephen Bourne 
+this is first shell which is developed for unix
+by using  sh  command we can access this shell 
+
+
+ex;   
+date 
+
+cal 
+
+echo "hello .."
+
+execute different but i want to use all commands in page 
+
+
+Test.java
+
+test.py 
+
+test.sh
+
+   there are multiple editors we have 
+   
+       vi editor 
+	   geditor
+	   nano editor 
+	   
+
+ex:   gedit test.sh 
+
+   
+      write 
+	     
+		   echo "welcome to shell script"
+           date
+           date
+            cal
+
+  * cntrl+s --save 
+    cntrl+q--quit 
+	
+	
+again you want to open that file:  gedit test.sh 
+
+* user cannot execute this script 
+      user must provide "execute file  permission"
+
+  
+  ==>ls -l  test.sh 
+
+
+       sathyasoma@sathyasoma-VirtualBox:~$ ls -l test.sh
+-rw-rw-r-- 1 sathyasoma sathyasoma 45 Jan 29 16:51 test.sh
+
+
+rw- ==> user permissions 
+
+rw- ==> group permissions 
+
+r-- ==> others permissions 
+
+ * change user to add execute permission 
+ 
+   use command:  chmod u+x test.sh 
+
+       
+	     sathyasoma@sathyasoma-VirtualBox:~$ ls -l test.sh
+-rwxrw-r-- 1 sathyasoma sathyasoma 45 Jan 29 16:51 test.sh
+
+
+to execute:
+==========
+
+./test.sh 
+
+
+* default shell is bash shell 
+
+i wnat to know which shell is excuted 
+
+      sh ./test.sh : if we used this commnd bourn shell is executed this file 
+	  
+	  
+Bash Shell:
+-----------
+
+bash-> bourne again shell 
+
+it is advanced version of bourne shell  
+
+this is default shell for most of the linux flavours
+
+by using bash command we can access this shell 
+
+    
+	   bash ./test.sh 
+
+
+3. korn shell:
+-------------
+it is developed by david korn 
+
+mostly this shell used in IBM AIX operating system 
+
+by using ksh command , we can access this shell 
+
+
+Cshell:
+-------
+
+Developed by Bill joy 
+C meant for California University 
+It is also by deafult available with Unix 
+By using csh command we can access this Cshell
+
+5 Tshell:
+--------
+T means Terminal
+it is advanced version of Cshell 
+it is the most commonly used in HP unix systems 
+Bu ysing tcsh command, we can access this shell 
+
+6 Z shell:
+---------
+
+Developed by paul 
+
+by using zsh command we can access this shell 
+
+* the most common used shell in linux environment is bash 
+
+how to dwfault shell in our system:
+----------------------------------
+
+
+echo $0  -> to check which shell is 
+
+         sathyasoma@sathyasoma-VirtualBox:~$ echo $0
+         bash
+
+ echo $SHELL   ::DEAULT SHELL 
+ 
+ sathyasoma@sathyasoma-VirtualBox:~$ echo $SHELL
+/bin/bash
+
+
+we can check defult file information inside  /etc/passwd file also 
+
+    cat /etc/passwd
+	
+	
+	sathyasoma:x:1000:1000:sathyasoma,,,:/home/sathyasoma:/bin/bash
+
+
+how to check all availble shell in our system :
+--------------------------
+
+    cat /etc/shells
+	
+how to switch to other shells:
+-------------------------
+echo $0  : default shell is bash shell 
+
+command :  sh 
+   
+     command:  echo $0 
+	 
+	 sathyasoma@sathyasoma-VirtualBox:~$ sh
+$ echo $0
+sh
+exit
+
+
+command; rbash
+   echo $0
+   
+   get: rbash   (shell)
+   
+   exit 
+   
+
+command: dash 
+
+   echo $0
+   
+   dash 
+   exit 
+   
+   
+   what is shell script:
+   ----------------------
+   
+   a sequence of commands saved a file and this file is nothing but shell script.
+   
+   proggramming features also : control statemnts,loops,functions,arrays
+   
+   for complex requiremnts also we can write our scripts very easyly.
+   
+   for automation tasks.
+   
+   
+   
+   How to write and run first shell script :
+   ========================================
+   
+   1. write script 
+   
+     vi editor 
+	 nano editor 
+	 geditor 
+   
+     gedit  test.sh 
+	   ------
+	   echo "welcome to shell scripting"
+       date cal
+		
+		ls -l test.sh
+		
+   as user we dont have execution,
+      add chmod a+u test.sh 
+	  
+	  ls -l test.sh 
+	  
+for execution:    ./test.sh 
+
+
+  * without creating scripts every where create one directory(folder) scripts 
+  
+**
+1. write the script 
+    demo.sh 
+    gedit demo.sh 
+
+2. give execute permission 	
+    
+	   chmod u+x demo.sh
+
+3. execute the script 
+
+   ./demo.sh 
+   
+ **  
+  importance of sha-Bang:
+-------------------------
+c# --<c sharp
+
+#-->sharp 
+
+! --> exclamatory or Bang 
+
+#! --> sharp Bang (sha-Bang) or she-Bang
+
+By using sha-Bang, we can specify the interpreter(command) which is responsible 
+ execute the scripts .
+ 
+ 
+ #! /bin/sh
+   date 
+   cal 
+   
+* bourn shell executes this shell 
+
+* if we write shabang in our scripts,at the time of execution, we are not rewuired 
+to provide command to execute and we can execute script directly 
+
+Q) consider the following script?
+
+gedit magic.sh 
+---
+#! /bin/rm
+echo "the current system date and time "
+date 
+
+  execute permission
+  ls -l magic.sh 
+  
+     chmod u+x magic.sh 
+  
+  ls -l magic.sh 
+  
+./magic.sh
+
+
+Varible substitution and command substitution:
+==============================================
+
+Accessing the value of a variable by using $ symbol is called variable substutution .
+
+syntax:  $variblename
+
+${varibalename}
+
+  we can take any one but recomnded to take second 
+  
+  create script:
+  =============
+  
+  gedit demo.sh 
+  
+     
+a=10
+b=20
+
+course="linux"
+action="sleep"
+
+
+echo "the varible values are $a and $b"
+
+echo "the course is $course"
+echo "the action is $action"
+
+
+cntr+s, cntrl+q 
+
+
+set perssion 
+
+
+ls -l demo.sh 
+
+  execute;   ./demo.sh 
+  
+  
+  
+  Q) consider the following variable declaration
+  
+  
+  echo name  ==>name 
+  echo $name  ==>valid 
+  echo '$name' ==>$name
+  echo "$name"===>valid 
+  
+  note: if we use single quote then variable substutution wont be happen.
+  
+  command substutuition:
+  ===================== 
+  
+  execute command and substutute its result.
+  
+  syntax:
+   ---
+   
+   old style: `command`   (backquote)
+  
+  new style:  $(command)
+  
+  
+  eg: to display both date and time 
+  
+        date ==>will display both date and time 
+		       date +%D ==> will display only date 
+			   
+	
+
+oldstyle:	$ echo "todat date is : `date +%D`"
+  
+  
+new style:     $ echo "todat date is : $(date +%D)"
+  
+  
+  
+eg2:
+===
+
+Q)to print number of files current working directory 
+
+ commnd:      ls | wc -l 
+
+
+command:   echo "the number of files in current working directory: $(ls |wc -l)"
+
+  (both are same)
+  
+  
+Q) To dispaly number of lines present in test.sh 
+
+ command  :   `cat test.sh| wc -l`
+
+command:  "no of lines in test.sh : $(cat test.sh |wc -l)"
+
+
+ Q)print current working directory 
+ 
+command:  echo " the current working directory :$(pwd)"
+
+
+  How to read dynamic dat from user:
+  ================================
+  
+by using read keyword we can read dynamic dat from the ednd user 
+
+without prompt message:
+-------------------
+
+    sathyasoma@sathyasoma-VirtualBox:~/scripts$ read a b
+23 34
+sathyasoma@sathyasoma-VirtualBox:~/scripts$ echo "the values of vaibale s $a and $b"
+the values of vaibale s 23 and 34
+
+ we dont use this type
+ 
+ 
+ with prompt message:
+ ==================
+ approch -1:
+ ============
+  test.sh 
+  
+  
+  sathyasoma@sathyasoma-VirtualBox:~/scripts$ gedit test.sh
+sathyasoma@sathyasoma-VirtualBox:~/scripts$ ./test.sh
+bash: ./test.sh: Permission denied
+sathyasoma@sathyasoma-VirtualBox:~/scripts$ chmod a+u test.sh
+sathyasoma@sathyasoma-VirtualBox:~/scripts$ ./test.sh
+bash: ./test.sh: Permission denied
+sathyasoma@sathyasoma-VirtualBox:~/scripts$ ls -l test.sh
+-rw-rw-rw- 1 sathyasoma sathyasoma 110 Jan 29 19:07 test.sh
+sathyasoma@sathyasoma-VirtualBox:~/scripts$ chmod u+x test.sh
+sathyasoma@sathyasoma-VirtualBox:~/scripts$ ./test.sh
+entaer A value:
+90
+enter B value:
+89
+ A value is : 90
+B value is : 89
+
+
+* use 
+   echo -n "enter A value"  : it will print after message 
+   
+   
+  approach 2:
+-------------  
+
+-p : (promt mesage)
+
+gedit test.sh 
+
+
+read -p "enter A value is :" A
+read -p "enter B value is :" B
+
+echo "A value is $A"
+echo "B value is $B"
+
+ex 1:
+-----
+
+
+read -p "enter username :" user
+read -p "enter password :" pswd
+
+echo " value is $user"
+echo " value is $pswd"
+
+
+ex:
+---
+**password is visible 
+
+use::  -s  (it hide input of screen which enter by user)
+  -s -p also
+**use echo after paswrd line 
+ 
+
+read -p "enter username :" user
+read -s -p "enter password :" pswd
+echo "thank you"
+echo " value is $user"
+echo " value is $pswd"
+
+ex:
+---
+
+read -p "enter username :" user
+read -s -p "enter password :" pswd
+echo 
+echo "thank you"
+echo " value is $user"
+echo " value is $pswd"
+
+  Q) write a script to read student data and dispaly for conformation.
+  
+ ans:
+------ 
+  read -p "enter student name:" name 
+  read -p "enter student rollno:" rollno 
+  read -p "enter student marks:" marks 
+
+  echo "please confirm your detatils.."
+  echo "................."
+  echo "student name: $name"
+  echo "student name: $rollno"
+  echo "student name: $marks"
+
+
+Q) write a  script to read employe details and save to emp.txt file.
+
+ans:
+
+  read -p "enter employee name:" name 
+  read -p "enter employee no:" no 
+  read -p "enter employee salary:" salary 
+
+  echo "below details will be saved to the file"
+  echo "$name:$no:$salary"
+  echo "$name:$no:$salary"  >>emp.txt
+
+
+
+ *to check: cat filename
+
+
+
+
+control statements:
+====================
+the statements which controls execution flow 
+
+
+if condition
+   commands 
+else 
+   commands 
+   
+   
+ 1. if statement 
+ 2. case statement 
+ 3. while loop 
+ 4. for loop 
+ 5.until loop 
+ 6. break 
+ 7. continuos 
+ 8. exit 
+ 
+ 
+ 1. if statement:
+ ---------------
+    1. simple if
+	2. if-else 
+	3. nested if 
+	4. laddr if 
+	
+	
+1. simple if:
+-------------
+
+if [ condition ]
+then
+  action
+  
+fi
+
+
+**fi ==> end of the statment
+
+* if the condition s true then only action will be executed .
+
+Q) write a script to read name from the end user and if name is sunny then display
+some special messege.
+
+    gedit test.sh
+	-----------
+	
+	read -p "Enter your Name:"name 
+	
+	if [ $name = "sunny" ]
+    then 
+	  echo "Hello Sunny very good morning"
+	fi 
+	echo "How r you"
+	
+	
+	execute:  ./test.sh
+
+note: x=10 ==>assigning operator
+      x = 10  >(give space comparision operator)
+
+
+2. if else:
+=========
+
+if [ condition ]
+then
+   action if condition is true
+else 
+   action if condition is false
+fi 
+  
+  
+ex:
+===
+
+    gedit test.sh
+	-----------
+	
+	read -p "Enter your Name:"name 
+	
+	if [ $name = "sunny" ]
+    then 
+	  echo "Hello Sunny very good morning"
+	else
+	   echo "Hello guest, good evening"
+	fi 
+	echo "How r you"
+
+
+execute: ./test.sh 
+
+3. nested:
+===========
+
+if [ condition ]
+
+
+4. case statement:
+=================
+
+like switch statement in java.
+
+
+
+my requirement is 
+
+if [ $n -eq 0]; then
+
+   echo "zero"
+elseif [ $n -eq 1 ]; then
+echo "one"
+
+*if multiple options are available then it is not recomended to use if-else-if-else
+statement. it increases length of the code and reduces readebility.
+
+To handle such type of requiremnts wee should go for case statement.
+ 
+my requiremnt is read any digit from 0 to 9
+
+
+syntax:
+=======
+
+
+case $variable in
+    option 1 )
+          action-1
+         ;;
+
+    option 2 )
+          action-2
+         ;;
+    option n )
+          action-n
+         ;;
+    *)
+      default action
+         ;;
+esac
+
+
+conclusions:
+----------
+1. option1 ) ==> this space is optional 
+   option1)
+
+2. ;;  ==> can be used to come out of the case statement
+
+3. ;; are mandetory for evry action, but for default option it is optional
+
+4. it is highly recomnede to use default option as last option.
+   if we take first then for any input only default action will be executed
+
+
+
+Q) write a script to read a digit from 0 to 9 and prints its equivalent english word?
+
+
+    read -p "Enter any digit from 0 to 9:" n
+   
+    case $n in
+       0)
+         echo "Zero"
+         ;;
+        
+       1)
+         echo "one"
+         ;;
+       
+       2)
+         echo "two"
+         ;;
+       
+       3)
+         echo "three"
+         ;;      
+       4)
+         echo "four"
+         ;;
+      
+       5)
+         echo "five"
+         ;;
+       
+       6)
+         echo "six"
+         ;;
+       
+       7)
+         echo "seven"
+         ;;
+       
+       8)
+         echo "eight"
+         ;;
+       
+       9)
+         echo "nine"
+         ;;
+       *)
+        echo "please enter 0 to 9 only"
+        ;;
+esac
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+	  
+	  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    
+   
+   
+   
+
+
+	  
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
